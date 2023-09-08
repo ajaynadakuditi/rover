@@ -153,7 +153,7 @@ function upload_tfstate {
 
     echo "Moving launchpad to the cloud"
 
-    get_storage_id
+    id=get_storage_id
     stg=$(az storage account show --ids ${id} -o json)
 
     export storage_account_name=$(echo ${stg} | jq -r .name) && echo " - storage_account_name: ${storage_account_name}"
